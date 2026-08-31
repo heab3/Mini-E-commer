@@ -99,7 +99,6 @@ const emit = defineEmits(['toggle', 'delete'])
 }
 
 .delete-btn:hover {
-  /* color: #dc3545; */
-  color: green;
+  color: #dc3545;
 }
 </style>
