@@ -2462,7 +2462,7 @@ onMounted(() => {
   <div class="app">
 
     <header class="header">
-      <h1>🛒 My Store</h1>
+      <h1> My Store</h1>
 
       <div class="cart-count">
         Cart: {{ cartCount }}
@@ -2587,7 +2587,8 @@ onMounted(() => {
           min="0"
           placeholder="Stock"
         />
-
+        <br>
+        <br>
         <button type="submit">
           Add Product
         </button>
@@ -2596,7 +2597,7 @@ onMounted(() => {
 
     <!-- CART -->
     <section class="section">
-      <h2>🛒 Shopping Cart</h2>
+      <h2> Shopping Cart</h2>
 
       <div
         v-if="cart.length === 0"
@@ -2710,7 +2711,7 @@ onMounted(() => {
   margin: auto;
   padding: 30px;
   font-family: Arial, sans-serif;
-  background: #f5f6fa;
+  background: #caccd4;
   min-height: 100vh;
 }
 
@@ -2799,6 +2800,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  
 }
 
 button:disabled {
@@ -2927,5 +2929,6 @@ button:disabled {
     grid-template-columns: 1fr;
     gap: 10px;
   }
+  
 }
 </style>
