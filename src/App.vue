@@ -2465,7 +2465,7 @@ onMounted(() => {
       <h1>🛒 My Store</h1>
 
       <div class="cart-count">
-        🛍️ Cart: {{ cartCount }}
+        Cart: {{ cartCount }}
       </div>
     </header>
 
@@ -2548,7 +2548,7 @@ onMounted(() => {
 
     <!-- ADD PRODUCT -->
     <section class="section">
-      <h2>➕ Add Product</h2>
+      <h2> Add Product</h2>
 
       <form
         class="product-form"
@@ -2617,13 +2617,13 @@ onMounted(() => {
 
         <div class="quantity">
           <button @click="decreaseQuantity(item)">
-            −
+            
           </button>
 
           <span>{{ item.quantity }}</span>
 
           <button @click="increaseQuantity(item)">
-            +
+            
           </button>
         </div>
 
@@ -2642,7 +2642,7 @@ onMounted(() => {
 
     <!-- CHECKOUT -->
     <section class="section checkout">
-      <h2>💳 Checkout Summary</h2>
+      <h2> Checkout Summary</h2>
 
       <input
         v-model="promoCode"
