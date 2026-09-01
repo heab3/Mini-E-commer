@@ -1081,7 +1081,7 @@ const grandTotal = computed(() => {
       v-for="item in cart"
       :key="item.id"
       class="cart-item"
-    > -->
+    > 
 
       <!-- <div>
         <h2>{{ item.name }}</h2>
@@ -1191,90 +1191,90 @@ const grandTotal = computed(() => {
 
 
 
-<script setup>
- import { ref, computed } from 'vue' 
- import TodoItem from './TodoItem.vue' 
+<!-- <script setup> -->
+ //import { ref, computed } from 'vue' 
+//  import TodoItem from './TodoItem.vue' 
 
 
-const tasks = ref([
-  { id: 1, title: 'Personal Work No. 1', completed: true, category: 'Personal' },
-  { id: 2, title: 'Personal Work No. 2', completed: false, category: 'Personal' },
-  { id: 3, title: 'Personal Work No. 3', completed: false, category: 'Personal' },
-  { id: 4, title: 'Personal Work No. 4', completed: true, category: 'Personal' },
-  { id: 5, title: 'Personal Work No. 5', completed: false, category: 'Personal' }
-])
+// const tasks = ref([
+//   { id: 1, title: 'Personal Work No. 1', completed: true, category: 'Personal' },
+//   { id: 2, title: 'Personal Work No. 2', completed: false, category: 'Personal' },
+//   { id: 3, title: 'Personal Work No. 3', completed: false, category: 'Personal' },
+//   { id: 4, title: 'Personal Work No. 4', completed: true, category: 'Personal' },
+//   { id: 5, title: 'Personal Work No. 5', completed: false, category: 'Personal' }
+// ])
 
-const newTask = ref('')
-const activeTab = ref('Personal')
+// const newTask = ref('')
+// const activeTab = ref('Personal')
 
-const addTask = () => {
-  if (newTask.value.trim() !== '') {
-    tasks.value.push({
-      id: Date.now(),
-      title: newTask.value,
-      completed: false,
-      category: activeTab.value
-    })
-    newTask.value = ''
-  }
-}
+// const addTask = () => {
+//   if (newTask.value.trim() !== '') {
+//     tasks.value.push({
+//       id: Date.now(),
+//       title: newTask.value,
+//       completed: false,
+//       category: activeTab.value
+//     })
+//     newTask.value = ''
+//   }
+// }
 
-const toggleTask = (id) => {
-  const task = tasks.value.find(t => t.id === id)
-  if (task) {
-    task.completed = !task.completed
-  }
-}
+// const toggleTask = (id) => {
+//   const task = tasks.value.find(t => t.id === id)
+//   if (task) {
+//     task.completed = !task.completed
+//   }
+// }
 
-const deleteTask = (id) => {
-  tasks.value = tasks.value.filter(task => task.id !== id)
-}
+// const deleteTask = (id) => {
+//   tasks.value = tasks.value.filter(task => task.id !== id)
+// }
 
-const clearCompleted = () => {
-  tasks.value = tasks.value.filter(task => !task.completed)
-}
+// const clearCompleted = () => {
+//   tasks.value = tasks.value.filter(task => !task.completed)
+// }
 
-const filteredTasks = computed(() => {
-  return tasks.value.filter(task => task.category === activeTab.value)
-})
- </script> 
-<template>
-  <div class="app-container">
-    <div class="task-box">
+// const filteredTasks = computed(() => {
+//   return tasks.value.filter(task => task.category === activeTab.value)
+// })
+<!-- //  </script>  -->
+<!-- {/* <template> */} -->
+  <!-- // <div class="app-container"> -->
+  <!-- //   <div class="task-box"> -->
       
-      <!-- Tabs ក្បាលលើ -->
-      <div class="tabs">
-        <button
+  //     <!-- Tabs ក្បាលលើ -->
+  <!-- //     <div class="tabs"> -->
+        <!-- // <button -->
           class="tab"
           :class="{ active: activeTab === 'Personal' }"
           @click="activeTab = 'Personal'"
         >
           Personal
-        </button>
-        <button
+        <!-- </button> -->
+        <!-- <button -->
           class="tab"
           :class="{ active: activeTab === 'Professional' }"
           @click="activeTab = 'Professional'"
         >
           Professional
-        </button>
-      </div>
+        <!-- </button> -->
+      <!-- </div> -->
 
       <!-- ប្រអប់បញ្ចូល Add Task -->
-      <div class="add-section">
-        <input
+      <!-- <div class="add-section"> -->
+        <!-- <input -->
           v-model="newTask"
           @keyup.enter="addTask"
           type="text"
           placeholder="What do you need to do?"
         />
-        <button class="add-btn" @click="addTask">ADD</button>
-      </div>
+        <!-- <button class="add-btn" @click="addTask">ADD</button> -->
+      <!-- </div> -->
 
       
-      <div class="task-card-body">
-        <div class="task-list">
-          <TodoItem
+      <!-- <div class="task-card-body"> -->
+        <!-- <div class="task-list"> -->
+          <!-- <TodoItem -->
             v-for="task in filteredTasks"
             :key="task.id"
             :title="task.title"
@@ -1282,24 +1282,24 @@ const filteredTasks = computed(() => {
             @toggle="toggleTask(task.id)"
             @delete="deleteTask(task.id)"
           />
-          <div v-if="filteredTasks.length === 0" class="empty">
+          <!-- <div v-if="filteredTasks.length === 0" class="empty"> -->
             No tasks in {{ activeTab }} yet
-          </div>
-        </div>
+          <!-- </div> -->
+        <!-- </div> -->
 
         
-        <div class="action-footer">
-          <button class="clear-btn" @click="clearCompleted">
-            <span class="clear-icon">✕</span> Clear Completed
-          </button>
-        </div>
-      </div>
+        <!-- <div class="action-footer"> -->
+          <!-- <button class="clear-btn" @click="clearCompleted"> -->
+            <!-- <span class="clear-icon">✕</span> Clear Completed -->
+          <!-- </button> -->
+        <!-- </div> -->
+      <!-- </div> -->
 
-    </div>
-  </div>
-</template>
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </template> -->
 
-<style scoped>
+<!-- <style scoped> -->
 
 .app-container {
   display: flex;
@@ -1443,13 +1443,17 @@ const filteredTasks = computed(() => {
 .clear-btn:hover {
   text-decoration: underline;
 }
-</style>
+<!-- </style> -->
+
+
+
+///Info 
 
 
 <!-- <script setup>
-import { ref } from 'vue'
+// import { ref } from 'vue'
 
-const darkMode = ref(false)
+// const darkMode = ref(false)
 
 const projects = [
   {
@@ -1480,8 +1484,8 @@ const skills = [
 ]
 </script>
 
-<template>
-  <div :class="{ dark: darkMode }" class="portfolio">
+<!-- <template> -->
+  <!-- <div :class="{ dark: darkMode }" class="portfolio"> -->
 
     <!-- Navbar -->
     <!-- <header class="navbar"> -->
@@ -1499,8 +1503,8 @@ const skills = [
         <!-- <button class="theme-btn" @click="darkMode = !darkMode">
           {{ darkMode ? '☀️' : '🌙' }}
         </button> -->
-      <!-- </div>
-    </header>
+     <!-- </div> -->
+    <!-- </header> -->
 
     <!-- Hero -->
     <!-- <section id="home" class="hero"> -->
@@ -2186,4 +2190,742 @@ footer {
   }
 }
 <!-- </style> -->
- -->
+ 
+
+//Mini E-Commerce
+<script setup>
+import { ref, computed, watch, onMounted } from 'vue'
+
+const products = ref([
+  {
+    id: 1,
+    name: 'iPhone 15',
+    category: 'Electronics',
+    price: 999,
+    stock: 10
+  },
+  {
+    id: 2,
+    name: 'Laptop HP',
+    category: 'Electronics',
+    price: 750,
+    stock: 5
+  },
+  {
+    id: 3,
+    name: 'Pizza',
+    category: 'Food',
+    price: 8,
+    stock: 20
+  },
+  {
+    id: 4,
+    name: 'Burger',
+    category: 'Food',
+    price: 5,
+    stock: 15
+  },
+  {
+    id: 5,
+    name: 'T-Shirt',
+    category: 'Fashion',
+    price: 15,
+    stock: 30
+  }
+])
+
+const cart = ref([])
+
+const searchQuery = ref('')
+const selectedCategory = ref('All')
+const sortBy = ref('default')
+
+const promoCode = ref('')
+
+const newProduct = ref({
+  name: '',
+  category: 'Electronics',
+  price: '',
+  stock: ''
+})
+
+const filteredProducts = computed(() => {
+  let result = products.value.filter(product => {
+    const search = product.name
+      .toLowerCase()
+      .includes(searchQuery.value.toLowerCase())
+
+    const category =
+      selectedCategory.value === 'All' ||
+      product.category === selectedCategory.value
+
+    return search && category
+  })
+
+  if (sortBy.value === 'low-high') {
+    result.sort((a, b) => a.price - b.price)
+  }
+
+  if (sortBy.value === 'high-low') {
+    result.sort((a, b) => b.price - a.price)
+  }
+
+  return result
+})
+
+function addProduct() {
+  if (!newProduct.value.name.trim()) {
+    alert('Please enter product name')
+    return
+  }
+
+  if (newProduct.value.price <= 0) {
+    alert('Price must be greater than 0')
+    return
+  }
+
+  if (newProduct.value.stock < 0 || newProduct.value.stock === '') {
+    alert('Stock cannot be negative')
+    return
+  }
+
+  products.value.push({
+    id: Date.now(),
+    name: newProduct.value.name,
+    category: newProduct.value.category,
+    price: Number(newProduct.value.price),
+    stock: Number(newProduct.value.stock)
+  })
+
+  newProduct.value = {
+    name: '',
+    category: 'Electronics',
+    price: '',
+    stock: ''
+  }
+}
+
+function deleteProduct(id) {
+  const inCart = cart.value.find(item => item.id === id)
+
+  if (inCart) {
+    alert('Cannot delete product in cart')
+    return
+  }
+
+  products.value = products.value.filter(
+    product => product.id !== id
+  )
+}
+
+function addToCart(product) {
+  if (product.stock <= 0) {
+    alert('Out of stock!')
+    return
+  }
+
+  const item = cart.value.find(
+    item => item.id === product.id
+  )
+
+  if (item) {
+    item.quantity++
+  } else {
+    cart.value.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1
+    })
+  }
+
+  product.stock--
+}
+
+function increaseQuantity(item) {
+  const product = products.value.find(
+    product => product.id === item.id
+  )
+
+  if (!product) return
+
+  if (product.stock <= 0) {
+    alert('No more stock!')
+    return
+  }
+
+  item.quantity++
+  product.stock--
+}
+
+function decreaseQuantity(item) {
+  const product = products.value.find(
+    product => product.id === item.id
+  )
+
+  if (item.quantity > 1) {
+    item.quantity--
+
+    if (product) {
+      product.stock++
+    }
+  } else {
+    removeFromCart(item.id)
+  }
+}
+
+function removeFromCart(id) {
+  const item = cart.value.find(
+    item => item.id === id
+  )
+
+  if (!item) return
+
+  const product = products.value.find(
+    product => product.id === id
+  )
+
+  if (product) {
+    product.stock += item.quantity
+  }
+
+  cart.value = cart.value.filter(
+    item => item.id !== id
+  )
+}
+
+const subtotal = computed(() => {
+  return cart.value.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  )
+})
+
+const discountRate = computed(() => {
+  return promoCode.value.toUpperCase() === 'SAVE20'
+    ? 0.2
+    : 0
+})
+
+const discount = computed(() => {
+  return subtotal.value * discountRate.value
+})
+
+const grandTotal = computed(() => {
+  return subtotal.value - discount.value
+})
+
+const cartCount = computed(() => {
+  return cart.value.reduce(
+    (total, item) => total + item.quantity,
+    0
+  )
+})
+
+watch(
+  products,
+  value => {
+    localStorage.setItem(
+      'products',
+      JSON.stringify(value)
+    )
+  },
+  { deep: true }
+)
+
+watch(
+  cart,
+  value => {
+    localStorage.setItem(
+      'cart',
+      JSON.stringify(value)
+    )
+  },
+  { deep: true }
+)
+
+onMounted(() => {
+  const savedProducts = localStorage.getItem('products')
+  const savedCart = localStorage.getItem('cart')
+
+  if (savedProducts) {
+    products.value = JSON.parse(savedProducts)
+  }
+
+  if (savedCart) {
+    cart.value = JSON.parse(savedCart)
+  }
+})
+</script>
+
+<template>
+  <div class="app">
+
+    <header class="header">
+      <h1>🛒 My Store</h1>
+
+      <div class="cart-count">
+        🛍️ Cart: {{ cartCount }}
+      </div>
+    </header>
+
+    <!-- PRODUCTS -->
+    <section class="section">
+      <h2>Product Catalog</h2>
+
+      <div class="filters">
+        <input
+          v-model="searchQuery"
+          type="text"
+          placeholder="Search product..."
+        />
+
+        <select v-model="selectedCategory">
+          <option value="All">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Food">Food</option>
+          <option value="Fashion">Fashion</option>
+        </select>
+
+        <select v-model="sortBy">
+          <option value="default">Default</option>
+          <option value="low-high">Price: Low → High</option>
+          <option value="high-low">Price: High → Low</option>
+        </select>
+      </div>
+
+      <div class="product-grid">
+        <div
+          v-for="product in filteredProducts"
+          :key="product.id"
+          class="product-card"
+        >
+          <h3>{{ product.name }}</h3>
+
+          <p class="category">
+            {{ product.category }}
+          </p>
+
+          <p class="price">
+            ${{ product.price.toFixed(2) }}
+          </p>
+
+          <p>
+            Stock:
+            <strong
+              :class="{ out: product.stock === 0 }"
+            >
+              {{ product.stock }}
+            </strong>
+          </p>
+
+          <div class="button-group">
+            <button
+              class="buy-btn"
+              @click="addToCart(product)"
+              :disabled="product.stock === 0"
+            >
+              {{ product.stock === 0 ? 'Out of Stock' : 'Buy' }}
+            </button>
+
+            <button
+              class="delete-btn"
+              @click="deleteProduct(product.id)"
+            >
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p
+        v-if="filteredProducts.length === 0"
+        class="empty"
+      >
+        No products found.
+      </p>
+    </section>
+
+    <!-- ADD PRODUCT -->
+    <section class="section">
+      <h2>➕ Add Product</h2>
+
+      <form
+        class="product-form"
+        @submit.prevent="addProduct"
+      >
+        <input
+          v-model="newProduct.name"
+          type="text"
+          placeholder="Product name"
+        />
+
+        <select v-model="newProduct.category">
+          <option value="Electronics">
+            Electronics
+          </option>
+
+          <option value="Food">
+            Food
+          </option>
+
+          <option value="Fashion">
+            Fashion
+          </option>
+        </select>
+
+        <input
+          v-model.number="newProduct.price"
+          type="number"
+          min="0"
+          placeholder="Price"
+        />
+
+        <input
+          v-model.number="newProduct.stock"
+          type="number"
+          min="0"
+          placeholder="Stock"
+        />
+
+        <button type="submit">
+          Add Product
+        </button>
+      </form>
+    </section>
+
+    <!-- CART -->
+    <section class="section">
+      <h2>🛒 Shopping Cart</h2>
+
+      <div
+        v-if="cart.length === 0"
+        class="empty"
+      >
+        Your cart is empty.
+      </div>
+
+      <div
+        v-for="item in cart"
+        :key="item.id"
+        class="cart-item"
+      >
+        <div>
+          <h3>{{ item.name }}</h3>
+          <p>${{ item.price.toFixed(2) }}</p>
+        </div>
+
+        <div class="quantity">
+          <button @click="decreaseQuantity(item)">
+            −
+          </button>
+
+          <span>{{ item.quantity }}</span>
+
+          <button @click="increaseQuantity(item)">
+            +
+          </button>
+        </div>
+
+        <strong>
+          ${{ (item.price * item.quantity).toFixed(2) }}
+        </strong>
+
+        <button
+          class="remove-btn"
+          @click="removeFromCart(item.id)"
+        >
+          Remove
+        </button>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="section checkout">
+      <h2>💳 Checkout Summary</h2>
+
+      <input
+        v-model="promoCode"
+        type="text"
+        placeholder="Promo Code: SAVE20"
+      />
+
+      <p
+        v-if="promoCode && discountRate > 0"
+        class="success"
+      >
+        ✓ 20% Discount Applied
+      </p>
+
+      <p
+        v-else-if="promoCode"
+        class="error"
+      >
+        Invalid promo code
+      </p>
+
+      <div class="summary">
+        <div>
+          <span>Subtotal</span>
+          <strong>
+            ${{ subtotal.toFixed(2) }}
+          </strong>
+        </div>
+
+        <div>
+          <span>Discount</span>
+          <strong class="discount">
+            -${{ discount.toFixed(2) }}
+          </strong>
+        </div>
+
+        <hr />
+
+        <div class="total">
+          <span>Grand Total</span>
+          <strong>
+            ${{ grandTotal.toFixed(2) }}
+          </strong>
+        </div>
+      </div>
+
+      <button
+        class="checkout-btn"
+        :disabled="cart.length === 0"
+      >
+        Checkout
+      </button>
+    </section>
+
+  </div>
+</template>
+
+<style scoped>
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.cart-count {
+  background: #222;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+}
+
+.section {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input,
+select {
+  padding: 11px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.filters input {
+  flex: 1;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.category {
+  color: #777;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.out {
+  color: red;
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buy-btn {
+  background: #222;
+  color: white;
+  flex: 1;
+}
+
+.delete-btn,
+.remove-btn {
+  background: #ffe0e0;
+  color: #d00;
+}
+
+.product-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  gap: 10px;
+}
+
+.product-form button {
+  background: #222;
+  color: white;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item h3 {
+  margin: 0;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity button {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  background: #eee;
+  font-size: 20px;
+}
+
+.checkout > input {
+  width: 100%;
+}
+
+.summary {
+  max-width: 450px;
+  margin: 20px 0 0 auto;
+}
+
+.summary > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.discount {
+  color: green;
+}
+
+.total {
+  font-size: 22px;
+}
+
+.checkout-btn {
+  width: 100%;
+  margin-top: 20px;
+  background: #222;
+  color: white;
+  font-size: 17px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+</style>
