@@ -2488,7 +2488,7 @@ onMounted(() => {
         </select>
 
         <select v-model="sortBy">
-          <option value="default">Default</option>
+          <option value="default">តម្រៀប</option>
           <option value="low-high">Price: Low → High</option>
           <option value="high-low">Price: High → Low</option>
         </select>
@@ -2546,7 +2546,7 @@ onMounted(() => {
       </p>
     </section>
 
-    <!-- ADD PRODUCT -->
+    
     <section class="section">
       <h2> Add Product</h2>
 
@@ -2578,7 +2578,7 @@ onMounted(() => {
           v-model.number="newProduct.price"
           type="number"
           min="0"
-          placeholder="Price"
+          placeholder="តម្លៃ$"
         />
 
         <input
@@ -2641,7 +2641,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <!-- CHECKOUT -->
+    
     <section class="section checkout">
       <h2> Checkout Summary</h2>
 
@@ -2667,18 +2667,18 @@ onMounted(() => {
 
       <div class="summary">
         <div>
-          <span>Subtotal</span>
+          <span>ទឹកប្រាក់ត្រូវបង់:</span>
           <strong>
             ${{ subtotal.toFixed(2) }}
           </strong>
         </div>
 
-        <div>
-          <span>Discount</span>
+        <!-- <div>
+          <span>បញ្ជុះតម្លៃ:</span>
           <strong class="discount">
             -${{ discount.toFixed(2) }}
           </strong>
-        </div>
+        </div> -->
 
         <hr />
 
